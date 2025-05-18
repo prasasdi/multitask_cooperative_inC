@@ -1,28 +1,34 @@
 # Compiler dan flags
 CC = x86_64-w64-mingw32-gcc
-# CFLAGS = -Wall -Wextra -O2 -mwindows
 CFLAGS = -O2
 LDFLAGS = 
-TARGET = main.exe
-SRC = main.c
-OBJ = $(SRC:.c=.o)
 
-# Default target
-all: build
+# Target dan sumber
+TARGETS = main.exe main_w_timeout.exe
 
-build: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): $(OBJ)
+# Build main.exe dari main.c
+main.exe: main.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
+# Build main_w_timeout.exe dari main_w_timeout.c
+main_w_timeout.exe: main_w_timeout.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Generic rule untuk .o file
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-run: $(TARGET)
-	./$(TARGET)
+run: main.exe
+	./main.exe
+
+run_timeout: main_w_timeout.exe
+	./main_w_timeout.exe
 
 clean:
-	del /Q *.o *.exe 2>nul || exit 0
+	del /Q *.o *.exe *.asm 2>nul || exit 0
 
-asm:
-	$(CC) $(CFLAGS) -S -masm=intel $(SRC) -o $(SRC:.c=.asm)
+asm: 
+	$(CC) $(CFLAGS) -S -masm=intel main.c -o main.asm
+	$(CC) $(CFLAGS) -S -masm=intel main_w_timeout.c -o main_w_timeout.asm
