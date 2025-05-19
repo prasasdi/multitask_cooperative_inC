@@ -31,3 +31,6 @@ Coro 1 timeout waiting for message
 ```
 
 Masih pakai Skeduler loop. Gw mau ganti kalau sudah 5x timeout. Langsung keluar
+
+## Sedihnya
+Update 20/05/2025: Ada prioritas yang harus gw lakuin, dan untuk sementara waktu contoh ini gw tinggal. GW masih inget kok btw, tenang aja. Udah gw coba kalau timeout 5x tolong terminate tasknya, tapi alangkah lebih baik kalau gw pelajari coroutine lebih lanjut di contoh / projek yang lain juga.

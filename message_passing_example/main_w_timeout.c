@@ -22,7 +22,6 @@ typedef struct coroutine {
     struct timeval wait_start;  // waktu timeout tunggu receive message
 } coroutine;
 
-
 typedef struct {
     coroutine *coros[MAX_COROUTINES];
     int count;
