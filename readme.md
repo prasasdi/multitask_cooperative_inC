@@ -30,6 +30,8 @@ Iya, karena konsep coroutine enggak sesimpel yang ada pada `blatant_version`. Gw
 
 + `common_asyncwait_example`; Update 20/05/2025 gw ngide dari contoh `message_passing_example` bisa enggak gw bikin dengan style contoh-contoh umum untuk `async/await`, pendekatannya mirip dengan `message_passing`, tapi ada yang kurang. Dan gw belum pakai `green thread`
 
++ `preemptivestyle_cooperative_scheduler`; Update 20/05/2025 gw coba untuk pakai gaya preemptive dengan memaksa task/coroutine yield oleh timer/interupt dan tetep bisa single-thread
+
 + `with_mutex`; ini tambahan ngomong-ngomong dan btw gw engeh satu hal. Dari dua contoh versi diatas (padahal sama-sama aja, cuman dari duff's device lebih dalem lagi kenapa ada macro `yield`, `begin` dan `end`) adalah masing-masing coroutine / task punya data / counter masing-masing. Bisa enggak gw pakai satu dua variabel "global" yang diakses oleh coroutine secara bebarengan? Ajimumpung belajar `mutex` cuy.
 
 # Latar Belakang
