@@ -16,3 +16,6 @@ Kayak gitu idenya.
 Dari contohnya udah mengarah ke ide dan harapan gw diatas tadi. Sekarang gw mengarah ke skeduler dan cara gw utilisasi `cross-platform` dengan `#if-#else`.
 
 Btw, tetep dengan Duff's Defice untuk macro `yield` dan dengan `interval` untuk state waktu. Gw sendiri udah paham, kenapa ada `yield` dan apa maknanya, lu gimana?
+
+# Ide lainnya
+Dari skeduler, dan sekarang gw tambahin coroutine secara manual, bisa enggak ya nambahin "otomatis" yang tinggal await aja gitu.

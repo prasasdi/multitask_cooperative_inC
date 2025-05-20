@@ -1,17 +1,28 @@
 # Manifesting dulu
 Liat tiap `readme.md` yang gw buat dan ada berapa update? Itu adalah bukti kalau walaupun dengan contoh kecil dan biasa begini gw bisa belajar banyak. Kalau gw bisa, kalian juga bisa.
 
-# Update 20/05/2025 Apa manfaatnya buat hidup manusia?
+# (Update 20/05/2025) Apa manfaatnya buat hidup manusia?
 Dengan gw belajar `cooperative programming`, gw bisa utilisasi multitasking di bahasa pemograman tingkat rendah seperti C atau C++ bahkan Arduino (Hayo anak-anak IT yang kuliahnya ada kelas embeded pasti melotot kalau ngulik apa yang gw kulik disini) pada sistem ber-single-threaded (bahasa pemograman modern kayak Javascript dan Python dong?)
 
 Selain itu gw jadi ngerti kenapa ada `yield` atau `coroutine`, bahkan setiap pendekatannya serupa dengan `async/await` yang gw sendiri pengen lakuin.
 
 Oh iya, dan ini **cocok untuk kalian yang lagi ada di mata kuliah pemograman dasar dengan menggunakan C** atau pakai C++ (bukan C/C++ ya) dan pastiin ini kompatibel di OS kalian. Gw sendiri di Windows, lu gimana? Pastiin bisa jelasinnya ya *wink
 
-# Kok ada folder-foldernya?
-Iya, karena konsep coroutine enggak sesimpel yang ada pada `blatant_version` dan pemikiran tolol gw. Gw ada salah, bukan berarti menghalang gw untuk belajar. 
+# (Update 20/05/2025) Saran susur folder
+Udah banyak folder bukan berarti satu-satu disusur, enggak ya. Semua contoh multitasking di sini pakai makro `yield` yang memanfaatkan teknik `switch-case` seperti `Duff's Device` untuk menyimpan dan melanjutkan eksekusi di titik tertentu, dan dari urutan `blatant_version` sampai `_example` adalah perkembangan dari day-0 sampai day-N. 
 
-+ `blatant_version`; versi tolol banget buat menghibur diri kalau elu(gw) bisa lakuin cooperative multitasking.
+Saran gw bisa mulai dari 
+1. `common_asyncwait_example` karena disana sudah kucoba untuk simplifikasi pemakaian / perakitan dari `coroutine`, `coroutine scheduler`, `interval` dan `fungsi "await"`, kemudian,
+2. `duff_device_version` dengan banyak task/coroutine lebih dari dua, dan kalian akan melihat struktur `coroutine` yang ditambah variabelnya, memang begitu karena kita rakit sendiri/manual coroutinenya bebas terserah, yang penting ada `state machine` dan mungkin `interval` juga `data`,
+3. `message_passing_example` disini udah mulai praktek `timeout` kayak `async` dari Javascript dengan contoh `passing message`,
+4. `with_mutex` disini belajar belakang layar `mutex` dengan sederhana, gw yakin dengan cooperative multitasking ini tidak seutuhnya terjadi race condition karena semua proses berjalan dengan harmonis dan saling kooperatif (hence it's called cooperative multitasking)
+
+Saran gw diatas akan berubah, dan yang gw rasa udah jadi semacam kertas coret=coret=an nantinya gw tandain. Jadi kalian enggak perlu susah-susah susur foldernya.
+
+## Kok ada folder-foldernya?
+Iya, karena konsep coroutine enggak sesimpel yang ada pada `blatant_version`. Gw ada salah, bukan berarti menghalang gw untuk belajar. 
+
++ `blatant_version`; versi naif untuk menghibur diri kalau elu(gw) bisa lakuin cooperative multitasking.
 
 + `duff_device`; gw udah mulai engeh yang diambil dari duff's device adalah pola switch-case yang unik, bisa diadaptasi untuk bikin state-machine coroutine. Dari sisi ilmu, ini jatuhnya "lompat" karena ada yang lebih ribet pakai stack terpisah dan mekanisme switch yang berat.
 
